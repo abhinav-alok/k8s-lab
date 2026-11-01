@@ -1,0 +1,7 @@
+# Never commit credentials
+.env
+.env.*
+*.pem
+*.key
+*kubeconfig*
+credentials*
