@@ -1,0 +1,59 @@
+NAMESPACE              LAST SEEN   TYPE      REASON                    OBJECT                                            MESSAGE
+default                39m         Normal    Starting                  node/minikube                                     
+default                39m         Normal    NodeHasSufficientMemory   node/minikube                                     Node minikube status is now: NodeHasSufficientMemory
+default                39m         Normal    NodeHasSufficientPID      node/minikube                                     Node minikube status is now: NodeHasSufficientPID
+default                39m         Normal    NodeHasNoDiskPressure     node/minikube                                     Node minikube status is now: NodeHasNoDiskPressure
+default                39m         Normal    Starting                  node/minikube                                     Starting kubelet.
+default                39m         Normal    NodeAllocatableEnforced   node/minikube                                     Updated Node Allocatable limit across pods
+kube-system            39m         Warning   Unhealthy                 pod/kube-scheduler-minikube                       Readiness probe failed: HTTP probe failed with statuscode: 500
+kube-system            39m         Warning   FailedScheduling          pod/storage-provisioner                           0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+default                39m         Normal    RegisteredNode            node/minikube                                     Node minikube event: Registered Node minikube in Controller
+kube-system            39m         Warning   FailedScheduling          pod/coredns-559f6c778d-5vpvq                      0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.
+kube-system            39m         Normal    SuccessfulCreate          daemonset/kube-proxy                              Created pod: kube-proxy-rj98q
+kube-system            39m         Normal    Scheduled                 pod/kube-proxy-rj98q                              Successfully assigned kube-system/kube-proxy-rj98q to minikube
+kube-system            39m         Normal    SuccessfulCreate          replicaset/coredns-559f6c778d                     Created pod: coredns-559f6c778d-5vpvq
+kube-system            39m         Normal    SuccessfulCreate          daemonset/kindnet                                 Created pod: kindnet-ksrs7
+kube-system            39m         Normal    Scheduled                 pod/kindnet-ksrs7                                 Successfully assigned kube-system/kindnet-ksrs7 to minikube
+kube-system            39m         Normal    ScalingReplicaSet         deployment/coredns                                Scaled up replica set coredns-559f6c778d from 0 to 1
+kube-system            39m         Normal    Pulled                    pod/kube-proxy-rj98q                              Container image "registry.k8s.io/kube-proxy:v1.37.0" already present on machine and can be accessed by the pod
+kube-system            39m         Normal    Created                   pod/kube-proxy-rj98q                              Container created
+kube-system            39m         Normal    Started                   pod/kube-proxy-rj98q                              Container started
+kube-system            39m         Normal    Pulling                   pod/kindnet-ksrs7                                 Pulling image "docker.io/kindest/kindnetd:v20260820-69b56db7"
+kube-system            38m         Normal    Created                   pod/kindnet-ksrs7                                 Container created
+kube-system            38m         Normal    Pulled                    pod/kindnet-ksrs7                                 Successfully pulled image "docker.io/kindest/kindnetd:v20260820-69b56db7" in 7.296s (7.296s including waiting). Image size: 39744255 bytes.
+kube-system            38m         Normal    Started                   pod/kindnet-ksrs7                                 Container started
+default                38m         Normal    NodeReady                 node/minikube                                     Node minikube status is now: NodeReady
+kube-system            38m         Normal    Scheduled                 pod/storage-provisioner                           Successfully assigned kube-system/storage-provisioner to minikube
+kube-system            38m         Normal    Scheduled                 pod/coredns-559f6c778d-5vpvq                      Successfully assigned kube-system/coredns-559f6c778d-5vpvq to minikube
+kube-system            38m         Normal    Pulled                    pod/coredns-559f6c778d-5vpvq                      Container image "registry.k8s.io/coredns/coredns:v1.14.6" already present on machine and can be accessed by the pod
+kube-system            38m         Normal    LeaderElection            endpoints/k8s.io-minikube-hostpath                minikube_98e8e347-309f-4979-9ef4-2d83aa9e1895 became leader
+kube-system            38m         Normal    Created                   pod/storage-provisioner                           Container created
+kube-system            38m         Normal    Started                   pod/coredns-559f6c778d-5vpvq                      Container started
+kube-system            38m         Warning   Unhealthy                 pod/coredns-559f6c778d-5vpvq                      Readiness probe failed: Get "http://10.244.0.2:8181/ready": dial tcp 10.244.0.2:8181: connect: connection refused
+kube-system            38m         Normal    Started                   pod/storage-provisioner                           Container started
+kube-system            38m         Normal    Created                   pod/coredns-559f6c778d-5vpvq                      Container created
+kube-system            38m         Normal    Pulled                    pod/storage-provisioner                           Container image "gcr.io/k8s-minikube/storage-provisioner:v5" already present on machine and can be accessed by the pod
+default                32m         Normal    ScalingReplicaSet         deployment/echo                                   Scaled up replica set echo-d6f4c768d from 0 to 1
+default                32m         Normal    SuccessfulCreate          replicaset/echo-d6f4c768d                         Created pod: echo-d6f4c768d-tdxtm
+default                32m         Normal    Scheduled                 pod/echo-d6f4c768d-tdxtm                          Successfully assigned default/echo-d6f4c768d-tdxtm to minikube
+default                32m         Normal    Pulling                   pod/echo-d6f4c768d-tdxtm                          Pulling image "k8s.gcr.io/e2e-test-images/echoserver:2.5"
+default                32m         Normal    Created                   pod/echo-d6f4c768d-tdxtm                          Container created
+default                32m         Normal    Pulled                    pod/echo-d6f4c768d-tdxtm                          Successfully pulled image "k8s.gcr.io/e2e-test-images/echoserver:2.5" in 4.051s (4.051s including waiting). Image size: 8477746 bytes.
+default                32m         Normal    Started                   pod/echo-d6f4c768d-tdxtm                          Container started
+kubernetes-dashboard   21m         Normal    SuccessfulCreate          replicaset/dashboard-metrics-scraper-69cbd87b98   Created pod: dashboard-metrics-scraper-69cbd87b98-pt2bh
+kubernetes-dashboard   21m         Normal    Pulling                   pod/kubernetes-dashboard-6df74558bd-4qxgr         Pulling image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93"
+kubernetes-dashboard   21m         Normal    Pulling                   pod/dashboard-metrics-scraper-69cbd87b98-pt2bh    Pulling image "docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c"
+kubernetes-dashboard   21m         Normal    ScalingReplicaSet         deployment/kubernetes-dashboard                   Scaled up replica set kubernetes-dashboard-6df74558bd from 0 to 1
+kubernetes-dashboard   21m         Normal    SuccessfulCreate          replicaset/kubernetes-dashboard-6df74558bd        Created pod: kubernetes-dashboard-6df74558bd-4qxgr
+kubernetes-dashboard   21m         Warning   FailedCreate              replicaset/kubernetes-dashboard-6df74558bd        Error creating: pods "kubernetes-dashboard-6df74558bd-" is forbidden: error looking up service account kubernetes-dashboard/kubernetes-dashboard: serviceaccount "kubernetes-dashboard" not found
+kubernetes-dashboard   21m         Warning   FailedCreate              replicaset/dashboard-metrics-scraper-69cbd87b98   Error creating: pods "dashboard-metrics-scraper-69cbd87b98-" is forbidden: error looking up service account kubernetes-dashboard/kubernetes-dashboard: serviceaccount "kubernetes-dashboard" not found
+kubernetes-dashboard   21m         Normal    Scheduled                 pod/dashboard-metrics-scraper-69cbd87b98-pt2bh    Successfully assigned kubernetes-dashboard/dashboard-metrics-scraper-69cbd87b98-pt2bh to minikube
+kubernetes-dashboard   21m         Normal    ScalingReplicaSet         deployment/dashboard-metrics-scraper              Scaled up replica set dashboard-metrics-scraper-69cbd87b98 from 0 to 1
+kubernetes-dashboard   21m         Normal    Scheduled                 pod/kubernetes-dashboard-6df74558bd-4qxgr         Successfully assigned kubernetes-dashboard/kubernetes-dashboard-6df74558bd-4qxgr to minikube
+kubernetes-dashboard   21m         Normal    Started                   pod/kubernetes-dashboard-6df74558bd-4qxgr         Container started
+kubernetes-dashboard   21m         Normal    Pulled                    pod/kubernetes-dashboard-6df74558bd-4qxgr         Successfully pulled image "docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93" in 13.359s (13.359s including waiting). Image size: 75788960 bytes.
+kubernetes-dashboard   21m         Normal    Created                   pod/kubernetes-dashboard-6df74558bd-4qxgr         Container created
+kube-system            21m         Warning   Unhealthy                 pod/kube-apiserver-minikube                       Readiness probe failed: HTTP probe failed with statuscode: 500
+kubernetes-dashboard   20m         Normal    Started                   pod/dashboard-metrics-scraper-69cbd87b98-pt2bh    Container started
+kubernetes-dashboard   20m         Normal    Created                   pod/dashboard-metrics-scraper-69cbd87b98-pt2bh    Container created
+kubernetes-dashboard   20m         Normal    Pulled                    pod/dashboard-metrics-scraper-69cbd87b98-pt2bh    Successfully pulled image "docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c" in 4.613s (17.916s including waiting). Image size: 19746404 bytes.

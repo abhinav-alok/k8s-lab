@@ -1,0 +1,42 @@
+    1  docker version
+    2  kubectl version
+    3  minikube version
+    4  alias k='kubectl'
+    5  alias mk='minikube'
+    6  mk version
+    7  k version
+    8  mk ssh
+    9  mk start
+   10  mk ssh
+   11  k cluster-info
+   12  get nodes
+   13  k get nodes
+   14  describe node minikube
+   15  k describe node minikube
+   16  mk addons list
+   17  k create deployment echo --image=k8s.gcr.io/e2e-test-images/echoserver:2.5deployment.apps/echo created
+   18  k create deployment echo --image=k8s.gcr.io/e2e-test-images/echoserver:2.5 deployment.apps/echo created
+   19  k create deployment echo --image=k8s.gcr.io/e2e-test-images/echoserver:2.5
+   20  k get po -w
+   21  k expose deployment echo --type=NodePort --port=8080
+   22  mk ip
+   23  k service echo -o jsopath='{.spec.ports[0].nodePort}'
+   24  k get service echo -o jsopath='{.spec.ports[0].nodePort}'
+   25  k get service echo -o jsonpath='{.spec.ports[0].nodePort}'
+   26  k get service echo
+   27  k get service echo -o jsonpath='{.spec.ports[0].nodePort}'; echo
+   28  curl http://192.168.49.2:30979/hi
+   29  mk addons enable dashbboard
+   30  mk addons list
+   31  mk addons enable dashboard
+   32  mk dashboard
+   33  k get pods,svc -n kubernetes-dashboard
+   34  k -n kubernetes-dashboard port-forward svc/kubernetes-dashboard 8081:80
+   35  cd snapshot/
+   36  k get namespaces > namespaces.txt
+   37  k get nodes -o wide > nodes.txt
+   38  k get all -A -o wide > all-resources.txt
+   39  k get all -A -o yaml > all-resources.yaml
+   40  k get events -A --sort-by=.lastTimestamp > events.txt
+   41  mk addons list > addons.txt
+   42  history > commands.txt

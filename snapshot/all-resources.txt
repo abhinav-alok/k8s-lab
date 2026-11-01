@@ -1,0 +1,35 @@
+NAMESPACE              NAME                                             READY   STATUS    RESTARTS   AGE   IP             NODE       NOMINATED NODE   READINESS GATES
+default                pod/echo-d6f4c768d-tdxtm                         1/1     Running   0          32m   10.244.0.3     minikube   <none>           <none>
+kube-system            pod/coredns-559f6c778d-5vpvq                     1/1     Running   0          39m   10.244.0.2     minikube   <none>           <none>
+kube-system            pod/etcd-minikube                                1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/kindnet-ksrs7                                1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/kube-apiserver-minikube                      1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/kube-controller-manager-minikube             1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/kube-proxy-rj98q                             1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/kube-scheduler-minikube                      1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kube-system            pod/storage-provisioner                          1/1     Running   0          39m   192.168.49.2   minikube   <none>           <none>
+kubernetes-dashboard   pod/dashboard-metrics-scraper-69cbd87b98-pt2bh   1/1     Running   0          21m   10.244.0.5     minikube   <none>           <none>
+kubernetes-dashboard   pod/kubernetes-dashboard-6df74558bd-4qxgr        1/1     Running   0          21m   10.244.0.4     minikube   <none>           <none>
+
+NAMESPACE              NAME                                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE   SELECTOR
+default                service/echo                        NodePort    10.100.160.51    <none>        8080:30979/TCP           30m   app=echo
+default                service/kubernetes                  ClusterIP   10.96.0.1        <none>        443/TCP                  39m   <none>
+kube-system            service/kube-dns                    ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP   39m   k8s-app=kube-dns
+kubernetes-dashboard   service/dashboard-metrics-scraper   ClusterIP   10.107.183.143   <none>        8000/TCP                 21m   k8s-app=dashboard-metrics-scraper
+kubernetes-dashboard   service/kubernetes-dashboard        ClusterIP   10.98.16.81      <none>        80/TCP                   21m   k8s-app=kubernetes-dashboard
+
+NAMESPACE     NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE   CONTAINERS    IMAGES                                          SELECTOR
+kube-system   daemonset.apps/kindnet      1         1         1       1            1           <none>                   39m   kindnet-cni   docker.io/kindest/kindnetd:v20260820-69b56db7   app=kindnet
+kube-system   daemonset.apps/kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   39m   kube-proxy    registry.k8s.io/kube-proxy:v1.37.0              k8s-app=kube-proxy
+
+NAMESPACE              NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                  IMAGES                                                                                                                  SELECTOR
+default                deployment.apps/echo                        1/1     1            1           32m   echoserver                  k8s.gcr.io/e2e-test-images/echoserver:2.5                                                                               app=echo
+kube-system            deployment.apps/coredns                     1/1     1            1           39m   coredns                     registry.k8s.io/coredns/coredns:v1.14.6                                                                                 k8s-app=kube-dns
+kubernetes-dashboard   deployment.apps/dashboard-metrics-scraper   1/1     1            1           21m   dashboard-metrics-scraper   docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c   k8s-app=dashboard-metrics-scraper
+kubernetes-dashboard   deployment.apps/kubernetes-dashboard        1/1     1            1           21m   kubernetes-dashboard        docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93         k8s-app=kubernetes-dashboard
+
+NAMESPACE              NAME                                                   DESIRED   CURRENT   READY   AGE   CONTAINERS                  IMAGES                                                                                                                  SELECTOR
+default                replicaset.apps/echo-d6f4c768d                         1         1         1       32m   echoserver                  k8s.gcr.io/e2e-test-images/echoserver:2.5                                                                               app=echo,pod-template-hash=d6f4c768d
+kube-system            replicaset.apps/coredns-559f6c778d                     1         1         1       39m   coredns                     registry.k8s.io/coredns/coredns:v1.14.6                                                                                 k8s-app=kube-dns,pod-template-hash=559f6c778d
+kubernetes-dashboard   replicaset.apps/dashboard-metrics-scraper-69cbd87b98   1         1         1       21m   dashboard-metrics-scraper   docker.io/kubernetesui/metrics-scraper:v1.0.8@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c   k8s-app=dashboard-metrics-scraper,pod-template-hash=69cbd87b98
+kubernetes-dashboard   replicaset.apps/kubernetes-dashboard-6df74558bd        1         1         1       21m   kubernetes-dashboard        docker.io/kubernetesui/dashboard:v2.7.0@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93         k8s-app=kubernetes-dashboard,pod-template-hash=6df74558bd
